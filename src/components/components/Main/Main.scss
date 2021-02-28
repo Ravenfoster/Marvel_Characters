@@ -1,0 +1,330 @@
+.swiper-container * {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.swiper-container {
+  box-sizing: border-box;
+  width: 100%;
+  transition: opacity .6s ease;
+  position: absolute;
+}
+
+
+.swiper-container.swiper-container-coverflow {
+  padding: 15px;
+}
+
+.swiper-container:hover .swiper-button-prev,
+.swiper-container:hover .swiper-button-next {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+// .swiper-slide {
+//   background-position: center;
+//   background-size: cover;
+// }
+
+.swiper-slide .swiper-content {
+  position: absolute;
+  bottom: 4%;
+  left: 2%;
+  max-width: 70%;
+  padding: 10px 16px;
+  color: #fff;
+  font-family: Verdana, sans-serif;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.swiper-slide .swiper-content .swiper-title {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.swiper-slide .swiper-content .swiper-caption {
+  display: block;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+[class^="swiper-button-"] {
+  width: 44px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.swiper-button-prev {
+  transform: translateX(50px);
+}
+
+.swiper-button-next {
+  transform: translateX(-50px);
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 10px;
+  bottom: 10px;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background-color: #337AB7;
+  opacity: .5;
+  transition: all .3s ease;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  border: 1px solid #337AB7;
+  border-radius: 50%;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet:hover,
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    bottom: 4px;
+  }
+
+  .swiper-slide .swiper-content .swiper-title {
+    font-size: 22px;
+  }
+
+  .swiper-slide .swiper-content .swiper-caption {
+    font-size: 13px;
+  }
+}
+
+img {
+  /* position: relative; */
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+img:before,
+img:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  -moz-border-radius: 100px / 10px;
+  border-radius: 100px / 10px;
+}
+
+img:after {
+  right: 10px;
+  left: auto;
+  -webkit-transform: skew(8deg) rotate(3deg);
+  -moz-transform: skew(8deg) rotate(3deg);
+  -ms-transform: skew(8deg) rotate(3deg);
+  -o-transform: skew(8deg) rotate(3deg);
+  transform: skew(8deg) rotate(3deg);
+}
+
+.card_title {
+  background-color: black;
+  position: absolute;
+  color: white;
+  left: 36%;
+  top: 81%;
+  font-size: 21px;
+
+  @media screen and (max-width: 1370px) {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 1150px) {
+    font-size: 15px;
+  }
+
+  @media screen and (max-width: 990px) {
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 9px;
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 346px) {
+    font-size: 9px;
+  }
+}
+
+.card_info {
+  position: absolute;
+  font-size: 13px;
+  font-weight: 700;
+  left: 39%;
+  top: 4%;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 50% 0%;
+  padding: 2px 10px 3px 10px;
+  transition: background-color .45s, border.45s;
+
+  @media screen and (max-width: 1150px) {
+    font-size: 10px;
+  }
+
+  @media screen and (max-width: 990px) {
+    font-size: 8px;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 6px;
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 8px;
+  }
+
+  @media screen and (max-width: 346px) {
+    font-size: 6px;
+  }
+}
+
+.card_info:hover {
+  background-color: black;
+  border: 1px solid black;
+}
+
+.card_info__title {
+  color: white;
+  text-decoration: none;
+}
+
+.loader {
+  position: relative;
+  top: 60px;
+  left: 600px;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: black;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+.imgStyle {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.titleStyle {
+  text-align: center;
+  margin-top: 30px;
+
+  img {
+    width: 200px;
+
+    @media screen and (max-width: 1150px) {
+      width: 150px;
+    }
+
+    @media screen and (max-width: 990px) {
+      width: 130px;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 100px;
+    }
+
+    @media screen and (max-width: 640px) {
+      width: 80px;
+    }
+
+    @media screen and (max-width: 346px) {
+      width: 60px;
+    }
+  }
+}

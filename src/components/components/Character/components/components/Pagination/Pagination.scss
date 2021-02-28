@@ -1,0 +1,42 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+
+  li {
+    margin-right: 4px;
+    color:black
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  li a {
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid black;
+    font-size: 18px;
+ 
+
+    &:hover:not(.active) {
+      background-color: #ddd;
+    }
+
+    &:active {
+      color: black;
+    }
+  }
+
+  &__link {
+    color: black;
+  }
+
+}
+
+.active {
+  pointer-events: none;
+  background: black;
+  color: white // cursor: default;
+}

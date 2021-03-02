@@ -10,7 +10,7 @@ import { KEY_PUBLIC, CHARS, COMICS } from '../../axios/urls'
 
 export const getProfile = (id, state) => {
   return dispatch => {
-    const character = state.find((elem) => elem.id === id)
+    const character = state.find((elem) => elem.id === +id)
     const profile = {
       name: character.name,
       description: character.description,

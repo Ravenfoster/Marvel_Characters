@@ -1,13 +1,22 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { PORTRATE } from '../../../axios/urls'
 import { ComicsComp } from './components/index'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import { getProfile, getComics } from '../../../store/action/profile'
 import './Character.scss'
 
 export const Character = () => {
 
+  const { id } = useParams()
+  const state = useSelector(state => state.characters.characters)
+  const dispatch = useDispatch()
   const profile = useSelector(state => state.profile.profile)
+
+  useEffect(() => {
+    dispatch(getProfile(id, state))
+    dispatch(getComics(id, state))
+  }, [])
 
   const renderProfile = (profile) => {
 
@@ -41,7 +50,7 @@ export const Character = () => {
   return (
     <>
       {
-        profile
+        Object.keys(profile).length
           ? renderProfile(profile)
           : null
       }

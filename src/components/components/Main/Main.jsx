@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Navigation, Pagination, Parallax, EffectCoverflow } from 'swiper'
 import { loadChars, getMoreChars, dispatchCurrentSlide } from '../../../store/action/characters'
-import { getProfile, cleanProfile, getComics } from '../../../store/action/profile'
+import { cleanProfile } from '../../../store/action/profile'
 import { useDispatch, useSelector } from 'react-redux'
 import { PORTRATE, NO_PIC } from '../../../axios/urls'
 import 'swiper/swiper-bundle.css'
@@ -21,11 +21,6 @@ export const Main = () => {
 
   const loadMoreChars = () => {
     dispatch(getMoreChars())
-  }
-
-  const loadProfile = (id, state) => {
-    dispatch(getProfile(id, state))
-    dispatch(getComics(id, state))
   }
 
   const CurrentSlide = (number) => {
@@ -66,17 +61,17 @@ export const Main = () => {
     },
     navigation: true,
     breakpoints: {
-      // when window width is >= 320px
+
       320: {
         slidesPerView: 2,
         spaceBetween: 20
       },
-      // when window width is >= 480px
+
       480: {
         slidesPerView: 3,
         spaceBetween: 30
       },
-      // when window width is >= 640px
+
       640: {
         slidesPerView: 4,
         spaceBetween: 40
@@ -103,7 +98,7 @@ export const Main = () => {
                   />
                   <h1 className='card_title'>{name}</h1>
                   <div className='card_info' >
-                    < Link className='card_info__title' onClick={() => loadProfile(id, state)} to={`/${name}`}>ABOUT</Link>
+                    < Link className='card_info__title' to={`/${id}`}>ABOUT</Link>
                   </div >
                 </SwiperSlide>
               )
@@ -116,16 +111,16 @@ export const Main = () => {
 
   return (
     <>
-        <div className='titleStyle'>
-          <img src={logo} alt='Marvel Studios' />
-        </div>
-        {
-          state.length
-            ? renderCards(state)
-            : <div className='loader'>
-              <div className='lds-ellipsis'><div></div><div></div><div></div><div></div></div>
-            </div>
-        }
+      <div className='titleStyle'>
+        <img src={logo} alt='Marvel Studios' />
+      </div>
+      {
+        state.length
+          ? renderCards(state)
+          : <div className='loader'>
+            <div className='lds-ellipsis'><div></div><div></div><div></div><div></div></div>
+          </div>
+      }
     </>
   )
 }

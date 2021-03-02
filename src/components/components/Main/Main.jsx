@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Navigation, Pagination, Parallax, EffectCoverflow } from 'swiper'
 import { loadChars, getMoreChars, dispatchCurrentSlide } from '../../../store/action/characters'
-import { getProfile, cleanProfile, getComics } from '../../../store/action/profile'
+import { cleanProfile } from '../../../store/action/profile'
 import { useDispatch, useSelector } from 'react-redux'
 import { PORTRATE, NO_PIC } from '../../../axios/urls'
 import 'swiper/swiper-bundle.css'
@@ -22,11 +22,6 @@ export const Main = () => {
   const loadMoreChars = () => {
     dispatch(getMoreChars())
   }
-
-  // const loadProfile = (id, state) => {
-  //   dispatch(getProfile(id, state))
-  //   dispatch(getComics(id, state))
-  // }
 
   const CurrentSlide = (number) => {
     dispatch(dispatchCurrentSlide(number))

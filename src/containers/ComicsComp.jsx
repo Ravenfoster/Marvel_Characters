@@ -1,9 +1,10 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Comics } from './components/Comics/Comics'
-import { Pagination } from './components/Pagination/Pagiation'
-import { changePage } from '../../../../store/action/profile'
+import { Comics } from '../components/Comics'
+import { Pagination } from '../components/Pagiation'
+import { changePage } from '../store/profile/actions'
 import './ComicsCorp.scss'
+
 
 export const ComicsComp = () => {
   const dispatch = useDispatch()
@@ -22,7 +23,12 @@ export const ComicsComp = () => {
   return (
     <>
       <div className='info__comics'>
-        <Comics currenComics={currenComics} />
+        {currenComics
+          ? <Comics currenComics={currenComics} />
+          : <h1>Loading ...</h1>
+
+        }
+
       </div>
       <div>
         <Pagination

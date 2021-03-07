@@ -5,3 +5,6 @@ export const MAX_SIZE = 'landscape_incredible'
 export const PORTRATE = 'portrait_uncanny'
 export const PORTRATE_MEDIUM = 'portrait_medium'
 export const NO_PIC = 'image_not_available'
+export const TEN = '10'
+
+

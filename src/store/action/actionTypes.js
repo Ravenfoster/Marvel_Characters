@@ -1,6 +1,0 @@
-export const LOAD_CHAR = 'LOAD_CHAR'
-export const LOAD_PROFILE = 'LOAD_PROFILE'
-export const LOAD_COMICS = 'LOAD_COMICS'
-export const CURRENT_SLIDE = 'CURRENT_SLIDE'
-export const CLEAN_PROFILE = 'CLEAN_PROFILE'
-export const CHANGE_CURRENT_PAGE = 'CHANGE_CURRENT_PAGE'

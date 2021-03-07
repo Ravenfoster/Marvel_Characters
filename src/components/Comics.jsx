@@ -1,5 +1,5 @@
 import React from 'react'
-import { PORTRATE_MEDIUM } from '../../../../../../axios/urls'
+import { PORTRATE_MEDIUM } from '../axios/urls'
 import './Comics.scss'
 
 export const Comics = ({ currenComics }) => {

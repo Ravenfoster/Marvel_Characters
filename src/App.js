@@ -1,6 +1,8 @@
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
-import { Main, Character } from './index'
+import { Main } from './containers/Main'
+import { Character } from './containers/Character'
+
 
 
 export const App = () => {

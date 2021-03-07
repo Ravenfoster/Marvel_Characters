@@ -1,22 +1,37 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { PORTRATE } from '../../../axios/urls'
-import { ComicsComp } from './components/index'
 import { Link, useParams } from 'react-router-dom'
-import { getProfile, getComics } from '../../../store/action/profile'
+import { PORTRATE } from '../axios/urls'
+import { ComicsComp } from './ComicsComp'
+import { getProfile, getComics } from '../store/profile/actions'
+import { loadCharsFromLink } from '../store/characters/actions'
+import { Loader } from '../components/Loader'
+import logo from '../logo/marvel-studios-logo.png'
 import './Character.scss'
 
 export const Character = () => {
 
+  const dispatch = useDispatch()
   const { id } = useParams()
   const state = useSelector(state => state.characters.characters)
-  const dispatch = useDispatch()
   const profile = useSelector(state => state.profile.profile)
 
   useEffect(() => {
-    dispatch(getProfile(id, state))
-    dispatch(getComics(id, state))
+
+    if (!state.length) {
+      dispatch(loadCharsFromLink(id))
+    }
+
   }, [])
+
+  useEffect(() => {
+
+    if (state.length) {
+      dispatch(getProfile(id, state))
+      dispatch(getComics(id, state))
+    }
+
+  }, [state, id])
 
   const renderProfile = (profile) => {
 
@@ -42,6 +57,9 @@ export const Character = () => {
             </div>
             <Link className='back' to='/' >&#8617;</Link>
           </div>
+          <footer>
+            <img src={logo} alt='Marvel Studios' />
+          </footer>
         </div>
       </React.Fragment>
     )
@@ -52,12 +70,8 @@ export const Character = () => {
       {
         Object.keys(profile).length
           ? renderProfile(profile)
-          : null
+          : <Loader />
       }
     </>
   )
-
-
-
-
 }

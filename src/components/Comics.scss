@@ -2,6 +2,11 @@
   max-width: 150px;
   margin-right: 10px;
 
+  @media screen and (max-width: 1152px) {
+    margin-bottom: 15px;
+  }
+  
+
   img {
     display: block;
     margin: 0 auto 10px auto;

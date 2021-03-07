@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App } from './components/index';
 import { BrowserRouter } from 'react-router-dom'
 import { applyMiddleware, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { Provider } from 'react-redux'
-import { rootReducer } from './store/reducer/rootReducer'
+import { rootReducer } from './store/rootReducer'
 import thunk from 'redux-thunk'
+import { App } from './App';
 
 const store = createStore(
   rootReducer,

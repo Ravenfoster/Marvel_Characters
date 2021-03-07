@@ -1,9 +1,9 @@
 import {
-  LOAD_CHAR, CURRENT_SLIDE
-} from '../action/actionTypes.js'
+  LOAD_CHAR, CURRENT_SLIDE, LOAD_CHARS_FROM_LINK
+} from './actionTypes'
 
 const initState = {
-  currentSlide: 1,
+  initialSlide: 1,
   characters: []
 }
 
@@ -12,7 +12,9 @@ export const characters = (state = initState, action) => {
     case LOAD_CHAR:
       return { ...state, characters: [...state.characters, ...action.characters] };
     case CURRENT_SLIDE:
-      return { ...state, currentSlide: action.number };
+      return { ...state, initialSlide: action.number };
+    case LOAD_CHARS_FROM_LINK:
+      return state;
     default: return state
   }
 }

@@ -1,0 +1,28 @@
+.title {
+  text-align: center;
+  margin-top: 30px;
+
+  img {
+    width: 200px;
+
+    @media screen and (max-width: 1150px) {
+      width: 150px;
+    }
+
+    @media screen and (max-width: 990px) {
+      width: 130px;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 100px;
+    }
+
+    @media screen and (max-width: 640px) {
+      width: 80px;
+    }
+
+    @media screen and (max-width: 346px) {
+      width: 60px;
+    }
+  }
+}

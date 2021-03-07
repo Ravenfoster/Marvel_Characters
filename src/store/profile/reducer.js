@@ -3,7 +3,7 @@ import {
   CLEAN_PROFILE,
   LOAD_COMICS,
   CHANGE_CURRENT_PAGE
-} from '../action/actionTypes'
+} from './actionTypes'
 const initState = {
   profile: {},
   comics: [],

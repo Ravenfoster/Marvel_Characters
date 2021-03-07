@@ -6,11 +6,16 @@ import {
 } from './actionTypes'
 import { request } from '../../axios/axios'
 import { KEY_PUBLIC, CHARS, COMICS } from '../../axios/urls'
-
+import { dispatchCurrentSlide } from '../characters/actions'
 
 export const getProfile = (id, state) => {
+  let currentSlide
   return dispatch => {
-    const character = state.find((elem) => elem.id === +id)
+    const character = state.find((elem, index) => {
+      currentSlide = index
+      return elem.id === +id
+    })
+
     const profile = {
       name: character.name,
       description: character.description,
@@ -20,6 +25,7 @@ export const getProfile = (id, state) => {
       }
     }
     dispatch(dispatchProfile(profile))
+    dispatch(dispatchCurrentSlide(currentSlide))
   }
 }
 

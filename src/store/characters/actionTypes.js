@@ -1,0 +1,3 @@
+export const LOAD_CHAR = 'LOAD_CHAR'
+export const CURRENT_SLIDE = 'CURRENT_SLIDE'
+export const LOAD_CHARS_FROM_LINK = 'LOAD_CHARS_FROM_LINK'
